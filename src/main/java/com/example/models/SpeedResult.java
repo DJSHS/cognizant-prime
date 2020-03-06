@@ -1,14 +1,27 @@
 package com.example.models;
 
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class SpeedResult {
 	
-	 private Long id;
-	 private String subjectName;
-	 private Speed speed;
-	 private Timestamp experimentTime;
+	@Id
+	private Long id;
+	
+	@Column(name = "subject_name")
+	private String subjectName;
+	
+	@Column
+	@Embedded
+	private Speed speed;
+	
+	@Column(name = "experiment_time")
+	private Timestamp experimentTime;
 	 
 	public Long getId() {
 		return id;
@@ -34,6 +47,6 @@ public class SpeedResult {
 	public void setExperimentTime(Timestamp experimentTime) {
 		this.experimentTime = experimentTime;
 	}
-	 
+	
 	 
 }

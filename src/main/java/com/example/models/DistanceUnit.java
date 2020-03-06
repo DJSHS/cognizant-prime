@@ -1,5 +1,8 @@
 package com.example.models;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public enum DistanceUnit {
 	 Millimeters("millimeters"),
 	 Centimeters("centimeters"),
